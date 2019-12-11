@@ -1,0 +1,59 @@
+function get_tags_for_item(item_details) {
+  // implement this
+}
+var tags_db = {
+  "tags": {
+    "countries": {
+      "usa": ["united states of america", "united states", "usa"],
+      "uk": ["uk", "united kingdom"],
+      "uae": ["uae", "united arab emirates"],
+      "yemen": ["yemen"],
+      "utd": ["united", "utd"],
+      "states": ["states"]
+    },
+    "colours": {
+      "blue": ["blue", "turquoise"],
+      "red": ["red", "crimson", "blood"]
+    }
+  },
+  "rules": [
+    { "field": "title", "tag_set": "countries" },
+    { "field": "description", "tag_set": "countries" },
+    { "field": "description", "tag_set": "colours" }
+  ]
+}
+
+// example input 1:
+var item_1 = {
+  "title": "US's crimson flag.",
+  "description": "The United States is considering pulling out of ... The red, blue and white flag ..."
+}
+var ex_1_output = get_tags_for_item(item_1)
+// expected output for example input 1:
+{
+  "title": {
+    "countries": []
+  },
+  "description": {
+    "countries": ["usa"],
+    "colours": ["red", "blue"]
+  }
+}
+
+// example input 2:
+var item_2 = {
+  "title": "UTD is in the finals",
+  "description": "United has made it to the finals on Sunday"
+}
+var ex_2_output = get_tags_for_item(item_2)
+// expected output for example input 2:
+{
+  "title": {
+    "countries": ["utd"]
+  },
+  "description": {
+    "countries": ["utd"],
+    "colours": []
+  }
+}
+————
