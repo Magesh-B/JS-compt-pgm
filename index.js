@@ -1,5 +1,3 @@
-<html>
-
 
 <script>
 
@@ -163,4 +161,3 @@ var obtainedJSON = get_tags_for_item_js(item_3);
 
 
 </script>
-</html>
