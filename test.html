@@ -1,0 +1,81 @@
+
+<html>
+<script>
+
+
+function get_tags_for_item_js(item)
+{
+    /*
+    for(x in tags_db.rules)
+    {
+        if(tags_db.rules[x].field == "title")
+        {
+                toFindTags(tags_db.rules[x].tag_set);
+        }
+        else if(tags_db.rules[x].field == "description")
+        {
+                toFindTags(tags_db.rules[x].tag_set);
+        }
+    }*/
+
+    for(x in tags_db.rules)
+    {
+        toFindTags( tags_db.rules[x].tag_set);
+    }
+
+    function matchTagsInField(field_value, tag_set)
+
+
+
+    function toFindTags( var keyToCheck)
+    {
+        //LOGIC TO EXTRACT TAGS
+    }
+
+}
+
+//DATEBASE
+var tags_db = {
+  "tags": {
+    "countries": {
+      "usa": ["united states of america", "united states", "usa"],
+      "uk": ["uk", "united kingdom"],
+      "uae": ["uae", "united arab emirates"],
+      "yemen": ["yemen"],
+      "utd": ["united", "utd"],
+      "states": ["states"]
+    },
+    "colours": {
+      "blue": ["blue", "turquoise"],
+      "red": ["red", "crimson", "blood"]
+    }
+  },
+  "rules": [
+    { "field": "title", "tag_set": "countries" },
+    { "field": "description", "tag_set": "countries" },
+    { "field": "description", "tag_set": "colours" }
+  ]
+}
+
+
+//EXAMPLE SET
+
+var item_1 = {
+  "title": "US's crimson flag",
+  "description": "The United States is considering pulling out of the UK agreement ... The red, blue and white flag ..."
+}
+
+var item_2 = {
+  "title": "UTD is in the finals",
+  "description": "United has made it to the finals on Sunday"
+}
+
+var item_3 = {
+  "title": "US's crimson flag",
+  "description": "The United States uae united arab emirates is considering pulling out of ... The red, blue and white flag ..."
+}
+
+
+
+</script>
+</html>
